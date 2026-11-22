@@ -4,46 +4,166 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ressamım · Çocuklar için resim dersleri</title>
-<meta name="description" content="Ressamım, 4–12 yaş çocuklara adım adım resim çizmeyi öğreten uygulama.">
+<meta name="description" content="Ressamım, 4–12 yaş çocuklara bir öğretmen eşliğinde adım adım resim çizmeyi öğreten uygulama. Reklamsız, kişisel veri toplamaz. Ücretsiz bölümleri videolarla izleyin.">
 <link rel="icon" href="simge.png">
-<style>
-  :root { --kagit:#FAF6EE; --metin:#3A3936; --soluk:#7C7A76; --cizgi:#E3DCCF; --vurgu:#6E9BC5; --okr:#E9B44C; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--kagit); color:var(--metin); font:17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; text-align: center; }
-  img.simge { width: 128px; height: 128px; border-radius: 28px; box-shadow: 0 6px 24px rgba(90,70,40,.18); }
-  h1 { font-size: 2.2rem; margin: 20px 0 4px; }
-  .alt { color: var(--soluk); margin: 0 0 32px; }
-  section { text-align: left; background: #FFFDF8; border: 1px solid var(--cizgi); border-radius: 18px; padding: 20px 24px; margin: 0 0 20px; }
-  h2 { font-size: 1.15rem; margin: 0 0 8px; }
-  p { margin: 0 0 8px; }
-  a { color: var(--vurgu); }
-  footer { color: var(--soluk); font-size: .9rem; margin-top: 32px; }
-</style>
+<link rel="alternate" hreflang="tr" href="https://ressamim.com/">
+<link rel="alternate" hreflang="en" href="https://ressamim.com/en/">
+<meta property="og:title" content="Ressamım · Çocuklar için resim dersleri">
+<meta property="og:description" content="Öğretmen önce çizerek gösterir, sonra çocuk kendi çizer. 4–12 yaş, 11 dil, reklamsız.">
+<meta property="og:image" content="https://ressamim.com/simge.png">
+<meta property="og:url" content="https://ressamim.com/">
+<link rel="preload" href="yazi/Baloo2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="stil.css">
 </head>
 <body>
+<header class="kap ust">
+  <a class="marka" href="./"><img src="simge.png" alt="">Ressamım</a>
+  <nav class="dil" aria-label="Dil"><a href="./" aria-current="page" lang="tr">TR</a><a href="en/" lang="en">EN</a></nav>
+</header>
+
 <main>
-  <img class="simge" src="simge.png" alt="Ressamım simgesi">
-  <h1>Ressamım</h1>
-  <p class="alt">Çocuklar için adım adım resim dersleri · Step-by-step drawing lessons for kids</p>
+  <div class="kap giris">
+    <div>
+      <h1>Çocuğunuz resim çizmeyi adım adım öğrensin</h1>
+      <p class="lead">Ressamım'da öğretmen her çizgiyi önce kendisi çizerek gösterir, küçük bir ipucu verir. Sonra sıra çocuktadır. Basit şekillerden suluboyaya kadar, kendi hızında.</p>
+      <ul class="rozetler">
+        <li>4–12 yaş</li><li>11 dil</li><li>Reklamsız</li><li>Kişisel veri toplanmaz</li>
+      </ul>
+      <div class="magaza">
+        <span>App Store</span><span>Google Play</span>
+        <small>Çok yakında iki mağazada da.</small>
+      </div>
+      <a class="dugme" href="#ucretsiz">Ücretsiz bölümleri izleyin</a>
+    </div>
+    <div class="ogretmen" aria-hidden="true">
+      <i class="leke l1"></i><i class="leke l2"></i><i class="leke l3"></i>
+      <img src="gorsel/ogretmen.webp" alt="" width="200" height="200">
+    </div>
+  </div>
 
-  <section lang="tr">
-    <h2>Ressamım nedir?</h2>
-    <p>Ressamım, 4–12 yaş arası çocuklara bir öğretmen eşliğinde adım adım resim çizmeyi öğretir. Reklam yoktur, kişisel veri toplanmaz.</p>
-    <h2>Destek</h2>
-    <p>Soru, öneri ya da sorun bildirimi için: <a href="mailto:destek@ressamim.com">destek@ressamim.com</a></p>
-    <p>Aboneliğinizi App Store ya da Google Play hesap ayarlarınızdan istediğiniz zaman yönetebilir veya iptal edebilirsiniz.</p>
+  <section class="ozet" id="ucretsiz">
+    <div class="kap">
+      <div class="baslik">
+        <h2>Ücretsiz neler var?</h2>
+        <p>Uygulamayı indirip hemen kullanmaya başlayabilirsiniz. Her alanın bir kısmı ücretsizdir, tamamı aile üyeliğiyle açılır. Aşağıdaki videolar uygulamanın kendisinden alınmış ekran kayıtlarıdır.</p>
+      </div>
+      <div class="kartlar">
+        <a href="#dersler" style="--renk: var(--sulu)"><strong>12 ders</strong><span>Dört bölümün her birinden ilk 3 ders</span></a>
+        <a href="#atolye" style="--renk: var(--gul)"><strong>Atölye</strong><span>Kalem, silgi, 6 renk ve 3 boyama sayfası</span></a>
+        <a href="#oyun" style="--renk: var(--okr)"><strong>Renk karıştır</strong><span>Renkleri karıştırarak öğreten oyun</span></a>
+        <a href="#dergi" style="--renk: var(--sogut)"><strong>Dergi 1. sayı</strong><span>Bir ressamla tanışma ve haftanın görevi</span></a>
+      </div>
+      <p class="not">Çizimlerim bölümü ve çizimleri kaydetmek her zaman ücretsizdir.</p>
+    </div>
   </section>
 
-  <section lang="en">
-    <h2>What is My Little Artist (Ressamım)?</h2>
-    <p>Ressamım teaches children aged 4–12 to draw, step by step, with a friendly teacher. No ads, no personal data collected.</p>
-    <h2>Support</h2>
-    <p>Questions, ideas or problems: <a href="mailto:destek@ressamim.com">destek@ressamim.com</a></p>
-    <p>You can manage or cancel your subscription at any time in your App Store or Google Play account settings.</p>
+  <section>
+    <div class="kap">
+      <article class="ozellik" id="dersler">
+        <div class="telefon-kutu">
+          <div class="telefon"><video id="v-ders" data-oto loop muted playsinline preload="metadata" poster="video/tr/ders.jpg" aria-label="Güneş dersinin ekran kaydı"><source src="video/tr/ders.mp4" type="video/mp4"></video></div>
+          <button class="ses" type="button" data-ses="v-ders" data-acik="Öğretmeni dinleyin" data-kapali="Sesi kapatın" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+            <span>Öğretmeni dinleyin</span>
+          </button>
+        </div>
+        <div>
+          <span class="etiket" style="--renk: var(--sulu)">Dersler</span>
+          <h3>Öğretmen gösterir, çocuk çizer</h3>
+          <p>Her ders birkaç kısa adımdan oluşur. Öğretmen çizgiyi ekranda çizerek anlatır. Çocuk aynı çizgiyi kendi parmağıyla ya da kalemiyle çizer, yıldızlarını toplar. Videoda Minikler bölümünün ilk dersi var: güneş.</p>
+          <ul>
+            <li><b>Minikler</b> (4–6 yaş): güneş, balon, elma</li>
+            <li><b>Karakalem</b>: kedi, düz çizgiler, daireler</li>
+            <li><b>Suluboya</b> ve <b>Renk</b>: ilk üçer ders</li>
+          </ul>
+          <p class="kilit">Her bölümde 50 ders var. Kalan dersler aile üyeliğiyle açılır.</p>
+        </div>
+      </article>
+
+      <article class="ozellik" id="atolye">
+        <div class="telefon-kutu">
+          <div class="telefon"><video data-oto loop muted playsinline preload="metadata" poster="video/tr/atolye.jpg" aria-label="Atölyede serbest çizim ve boyama sayfasının ekran kaydı"><source src="video/tr/atolye.mp4" type="video/mp4"></video></div>
+        </div>
+        <div>
+          <span class="etiket" style="--renk: var(--gul)">Atölye</span>
+          <h3>Serbest çizim ve boyama sayfaları</h3>
+          <p>Ders dışında da çizmek isteyen çocuklar için boş bir kâğıt. Öğretmen her gün yeni bir çizim fikri verir.</p>
+          <ul>
+            <li>Kalem, silgi ve 6 renk ücretsiz</li>
+            <li>3 boyama sayfası ücretsiz: elma, balık, kelebek</li>
+            <li>Biten resim tek dokunuşla <b>Çizimlerim</b>'e kaydedilir</li>
+          </ul>
+          <p class="kilit">Suluboya fırçası, 12 rengin tamamı ve 50 boyama sayfası aile üyeliğiyle.</p>
+        </div>
+      </article>
+
+      <article class="ozellik" id="oyun">
+        <div class="telefon-kutu">
+          <div class="telefon"><video data-oto loop muted playsinline preload="metadata" poster="video/tr/oyun.jpg" aria-label="Renk karıştır oyununun ekran kaydı"><source src="video/tr/oyun.mp4" type="video/mp4"></video></div>
+        </div>
+        <div>
+          <span class="etiket" style="--renk: var(--okr)">Oyun</span>
+          <h3>Renk karıştır</h3>
+          <p>Öğretmen bir renk ister: turuncu, yeşil ya da mor. Çocuk iki ana rengi seçer ve sonucu görür. Kırmızı ile sarının turuncu yaptığını oynayarak öğrenir.</p>
+          <p class="kilit">Toplam 9 oyun var. Diğer 8 oyun aile üyeliğiyle açılır.</p>
+        </div>
+      </article>
+
+      <article class="ozellik" id="dergi">
+        <div class="telefon-kutu">
+          <div class="telefon"><video data-oto loop muted playsinline preload="metadata" poster="video/tr/dergi.jpg" aria-label="Derginin 1. sayısının ekran kaydı"><source src="video/tr/dergi.mp4" type="video/mp4"></video></div>
+        </div>
+        <div>
+          <span class="etiket" style="--renk: var(--sogut)">Dergi</span>
+          <h3>Ressamlarla tanışma</h3>
+          <p>Her sayıda bir ressam, kısa ve basit bir dille tanıtılır. "Biliyor muydun?" köşesi ve atölyede yapılacak bir haftanın görevi vardır. 1. sayı Vincent van Gogh ve kıvrım kıvrım gökyüzü.</p>
+          <p class="kilit">50 sayının ilki ücretsiz, diğerleri aile üyeliğiyle.</p>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <footer><a href="gizlilik/">Gizlilik Politikası / Privacy Policy</a></footer>
+  <section class="uyelik">
+    <div class="kap">
+      <h2>Aile üyeliğiyle hepsi açılır</h2>
+      <p>Tek üyelik ailenin bütün çocuklarına yeter. Fiyatlar uygulamanın içinde, ebeveyn sorusundan sonra gösterilir. Aboneliği App Store ya da Google Play hesabınızdan istediğiniz zaman iptal edebilirsiniz.</p>
+      <ul class="liste">
+        <li><b>200 ders</b>Minikler, Karakalem, Suluboya ve Renk bölümlerinde 50'şer ders</li>
+        <li><b>9 oyun</b>Renkler, gölgeler, eşleştirme ve daha fazlası</li>
+        <li><b>50 dergi sayısı</b>Her sayıda bir ressam</li>
+        <li><b>50 boyama sayfası</b>Atölyede 12 renk ve suluboya fırçası</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="aile">
+    <div class="kap">
+      <h2>Ebeveynler için</h2>
+      <ul class="liste">
+        <li><b>Reklam yok</b>Uygulamada hiç reklam gösterilmez.</li>
+        <li><b>Kişisel veri yok</b>Hesap açılmaz, çocukla ilgili bilgi toplanmaz. <a href="gizlilik/">Gizlilik politikası</a></li>
+        <li><b>Süre sınırı ve göz molası</b>Günlük süreyi siz belirlersiniz, ara ara mola hatırlatılır.</li>
+        <li><b>Haftalık özet</b>Çocuğunuzun her gün kaç dakika çizdiğini görürsünüz.</li>
+        <li><b>4 çocuğa kadar profil</b>Her çocuk kendi yaşına uygun derslerle başlar.</li>
+        <li><b>Kâğıtta da çizilir</b>İsterseniz çocuk kâğıda çizer, resminin fotoğrafını ekler.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="destek" id="destek">
+    <div class="kap">
+      <h2>Destek</h2>
+      <p>Soru, öneri ya da sorun bildirimi için yazın: <a href="mailto:destek@ressamim.com">destek@ressamim.com</a></p>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="kap">
+    <span>© 2026 Ressamım</span>
+    <a href="gizlilik/">Gizlilik Politikası / Privacy Policy</a>
+  </div>
+</footer>
+<script src="site.js" defer></script>
 </body>
 </html>
