@@ -58,6 +58,9 @@ def sayfa(dil: str, m: dict, adlar: dict) -> str:
     r = yol(dil)
     hd = HTML_DIL.get(dil, dil)
     gizlilik = f'{r}gizlilik/{m["gizlilik_capa"]}'
+    # Veliler için yazdırılabilir plan sayfası yalnızca Türkçe; bağlantı da yalnızca Türkçe ana sayfada çıkar.
+    plan = ('\n      <p style="text-align:center;margin-top:28px"><a href="veliler/7-gunde-7-cizim/">'
+            'Veliler için yazdırılabilir plan: 7 günde 7 çizim</a></p>') if dil == 'tr' else ''
     alternatifler = '\n'.join(f'<link rel="alternate" hreflang="{HTML_DIL.get(d, d)}" href="{adres(d)}">' for d in DILLER)
     dil_menu = '\n'.join(
         f'        <li><a href="{r}{"" if d == "tr" else d + "/"}" hreflang="{HTML_DIL.get(d, d)}" lang="{HTML_DIL.get(d, d)}"'
@@ -224,7 +227,7 @@ def sayfa(dil: str, m: dict, adlar: dict) -> str:
       </div>
       <div class="izgara">
 {ebeveyn}
-      </div>
+      </div>{plan}
     </div>
   </section>
 
