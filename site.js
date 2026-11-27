@@ -21,6 +21,30 @@
     } else { oynat(v); }
   });
 
+  // Giriş: telefonda 5 dersin videosu sırayla döner; noktalarla elle de seçilir.
+  var hero = d.querySelector('video[data-liste]');
+  if (hero) {
+    var noktalar = Array.prototype.slice.call(d.querySelectorAll('.nokta'));
+    var heroAd = d.querySelector('.hero-ad');
+    var sira = 0;
+    var gecis = function (i) {
+      sira = (i + noktalar.length) % noktalar.length;
+      var n = noktalar[sira];
+      noktalar.forEach(function (x) { x === n ? x.setAttribute('aria-current', 'true') : x.removeAttribute('aria-current'); });
+      hero.classList.add('degisiyor'); if (heroAd) heroAd.classList.add('degisiyor');
+      setTimeout(function () {
+        hero.poster = n.getAttribute('data-poster');
+        hero.src = n.getAttribute('data-src');
+        hero.load();
+        if (heroAd) { heroAd.textContent = n.getAttribute('data-ad'); heroAd.classList.remove('degisiyor'); }
+        hero.classList.remove('degisiyor');
+        if (!azHareket) { var p = hero.play(); if (p) p.catch(function () {}); }
+      }, 250);
+    };
+    hero.addEventListener('ended', function () { gecis(sira + 1); });
+    noktalar.forEach(function (n, i) { n.addEventListener('click', function () { gecis(i); }); });
+  }
+
   // Öğretmen sesi: dersi baştan sesli oynatır.
   d.querySelectorAll('[data-ses]').forEach(function (b) {
     var v = d.getElementById(b.getAttribute('data-ses'));

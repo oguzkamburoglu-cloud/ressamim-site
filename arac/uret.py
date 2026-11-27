@@ -3,7 +3,8 @@
 
 Çalıştır (depo kökünde): python3 arac/uret.py
 Metni değiştirmek için ilgili JSON'u düzenleyip yeniden çalıştırın; HTML'i elle düzenlemeyin.
-Videolar: video/<dil>/{ders,atolye,oyun,dergi}.mp4 (+ .jpg kapak). Bir dilin videosu yoksa İngilizcesi kullanılır.
+Videolar: video/<dil>/{ders,atolye,oyun,dergi}.mp4 ve girişte dönen ders-*.mp4 (+ .jpg kapak).
+Bir dilin videosu yoksa İngilizcesi (o da yoksa Türkçesi) kullanılır. Ders adları: arac/ders_adlari.json.
 Gizlilik sayfası (gizlilik/) bu araçla üretilmez ve adresi değişmemelidir.
 """
 import html
@@ -50,7 +51,16 @@ def adres(dil: str) -> str:
 
 
 def video(dil: str, sahne: str) -> str:
-    return dil if (KOK / 'video' / dil / f'{sahne}.mp4').exists() else 'en'
+    for d in (dil, 'en', 'tr'):
+        if (KOK / 'video' / d / f'{sahne}.mp4').exists():
+            return d
+    raise FileNotFoundError(f'video/{dil}/{sahne}.mp4')
+
+
+# Girişteki telefonda sırayla dönen ders videoları: (sahne, uygulamadaki ders adı anahtarı).
+HERO_DERSLER = [('ders', 'd_gunes'), ('ders-balonlar', 'd_ana'), ('ders-gokkusagi', 'd_firca'),
+                ('ders-elma', 'd_elma'), ('ders-kedi', 'd_kedi')]
+DERS_ADLARI = json.loads((KOK / 'arac' / 'ders_adlari.json').read_text(encoding='utf-8'))
 
 
 def sayfa(dil: str, m: dict, adlar: dict) -> str:
@@ -89,6 +99,14 @@ def sayfa(dil: str, m: dict, adlar: dict) -> str:
         </div>''')
     sekmeler = '\n'.join(sekmeler)
     vitrin_videolar = '\n          '.join(vid(s, f'v-{s}', gizli=(s != 'ders')) for s in ['ders', 'atolye', 'oyun', 'dergi'])
+
+    v0 = video(dil, 'ders')
+    hero_video = (f'<video id="v-hero" data-oto data-liste muted playsinline preload="metadata" poster="{r}video/{v0}/ders.jpg" '
+                  f'aria-label="{e(m["video_ders"])}"><source src="{r}video/{v0}/ders.mp4" type="video/mp4"></video>')
+    hero_noktalar = ''.join(
+        f'<button type="button" class="nokta" data-src="{r}video/{video(dil, s)}/{s}.mp4" data-poster="{r}video/{video(dil, s)}/{s}.jpg" '
+        f'data-ad="{e(DERS_ADLARI[a][dil])}" aria-label="{e(DERS_ADLARI[a][dil])}"{" aria-current=\"true\"" if i == 0 else ""}></button>'
+        for i, (s, a) in enumerate(HERO_DERSLER))
 
     adimlar = '\n'.join(f'        <li style="--r: {c}"><h3>{e(m[f"adim{i}_h"])}</h3><p>{e(m[f"adim{i}_p"])}</p></li>'
                         for i, c in [(1, 'var(--sulu)'), (2, 'var(--okr)'), (3, 'var(--gul)')])
@@ -153,7 +171,11 @@ def sayfa(dil: str, m: dict, adlar: dict) -> str:
       </div>
       <div class="sahne">
         <i class="leke l1"></i><i class="leke l2"></i>
-        <div class="telefon">{vid("ders", "v-hero")}</div>
+        <div class="telefon">{hero_video}</div>
+        <div class="hero-liste">
+          <p class="hero-ad" aria-live="polite">{e(DERS_ADLARI[HERO_DERSLER[0][1]][dil])}</p>
+          <div class="noktalar">{hero_noktalar}</div>
+        </div>
         <span class="ogretmen"><img src="{r}gorsel/ogretmen.webp" alt="" width="200" height="200"></span>
         <button class="ses" type="button" data-ses="v-hero" data-acik="{e(m["ses_ac"])}" data-kapali="{e(m["ses_kapat"])}" aria-pressed="false"><span class="halka">{ikon("ses")}</span><span class="yazi">{e(m["ses_ac"])}</span></button>
       </div>

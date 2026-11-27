@@ -1,0 +1,67 @@
+{
+ "d_gunes": {
+  "tr": "Güneş",
+  "en": "Sun",
+  "zh": "太阳",
+  "hi": "सूरज",
+  "es": "Sol",
+  "ar": "الشمس",
+  "bn": "সূর্য",
+  "fr": "Soleil",
+  "ru": "Солнце",
+  "pt": "Sol",
+  "ur": "سورج"
+ },
+ "d_ana": {
+  "tr": "Ana renkler",
+  "en": "Primary colors",
+  "zh": "三原色",
+  "hi": "मूल रंग",
+  "es": "Colores primarios",
+  "ar": "الألوان الأساسية",
+  "bn": "মৌলিক রং",
+  "fr": "Couleurs primaires",
+  "ru": "Основные цвета",
+  "pt": "Cores primárias",
+  "ur": "بنیادی رنگ"
+ },
+ "d_firca": {
+  "tr": "Fırçayı tanı",
+  "en": "Meet the brush",
+  "zh": "认识画笔",
+  "hi": "ब्रश से मिलो",
+  "es": "Conoce el pincel",
+  "ar": "تعرّف على الفرشاة",
+  "bn": "তুলির সঙ্গে পরিচয়",
+  "fr": "Découvre le pinceau",
+  "ru": "Знакомство с кистью",
+  "pt": "Conheça o pincel",
+  "ur": "برش سے ملو"
+ },
+ "d_elma": {
+  "tr": "Elma",
+  "en": "Apple",
+  "zh": "苹果",
+  "hi": "सेब",
+  "es": "Manzana",
+  "ar": "تفاحة",
+  "bn": "আপেল",
+  "fr": "Pomme",
+  "ru": "Яблоко",
+  "pt": "Maçã",
+  "ur": "سیب"
+ },
+ "d_kedi": {
+  "tr": "Kedi çizelim",
+  "en": "Let's draw a cat",
+  "zh": "一起画小猫",
+  "hi": "चलो बिल्ली बनाएँ",
+  "es": "Dibujemos un gato",
+  "ar": "لنرسم قطة",
+  "bn": "চলো বিড়াল আঁকি",
+  "fr": "Dessinons un chat",
+  "ru": "Рисуем кота",
+  "pt": "Vamos desenhar um gato",
+  "ur": "آؤ بلی بنائیں"
+ }
+}
