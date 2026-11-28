@@ -88,6 +88,16 @@ img, video, svg { display: block; max-width: 100%; }
 .sahne .ogretmen { position: absolute; inset-inline-start: -64px; bottom: 70px; width: 128px; height: 128px; border-radius: 50%; border: 6px solid #fff; box-shadow: var(--golge-2); background: #F6E2B3; overflow: hidden; z-index: 3; }
 .sahne .ogretmen img { width: 100%; height: 100%; object-fit: cover; }
 .ses { position: absolute; inset-inline-end: -36px; top: 92px; z-index: 3; display: inline-flex; align-items: center; gap: 9px; border: 0; cursor: pointer; background: #fff; color: var(--grafit); font: 800 .95rem/1 var(--govde); border-radius: 999px; padding: 12px 16px 12px 12px; box-shadow: var(--golge-2); }
+.hero-liste { margin-top: 18px; display: grid; justify-items: center; gap: 8px; }
+.hero-ad { margin: 0; font: 800 1rem/1.2 var(--baslik); color: var(--grafit); min-height: 1.2em; transition: opacity .25s; }
+.hero-ad.degisiyor { opacity: 0; }
+.noktalar { display: flex; gap: 8px; }
+.nokta { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; background: var(--cizgi); cursor: pointer; transition: width .3s, background .3s; }
+.nokta:hover { background: var(--soluk); }
+.nokta[aria-current="true"] { width: 28px; background: var(--sulu); }
+.nokta:focus-visible { outline: 2px solid var(--sulu-koyu); outline-offset: 3px; }
+.telefon video { transition: opacity .25s; }
+.telefon video.degisiyor { opacity: 0; }
 .ses .halka { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--okr); color: #fff; }
 .ses .halka svg { width: 17px; height: 17px; }
 .ses[aria-pressed="true"] .halka { background: var(--sulu); }
